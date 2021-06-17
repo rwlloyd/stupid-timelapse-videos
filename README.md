@@ -1,7 +1,7 @@
 # stupid-timelapse-videos
 Quick tutorial on using ffmpeg to create timelapse videos from a stack of images
 
-![Banner Image](/assets/ffmpeg-timelapse.png)
+![Banner Image](/ffmpeg-timelapse.png)
 
 Creating a timelapse from a stack of images can be easily done in Adobe Premiere or even the old Windows Movie Maker. However, if you're a sadist or want to be able to script the creation of timelapse videos from a stack of images, you might like to try ffmpeg.
 
