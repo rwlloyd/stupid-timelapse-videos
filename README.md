@@ -1,34 +1,35 @@
-# stupid-timelapse-videos
-Quick tutorial on using ffmpeg to create timelapse videos from a stack of images
+# TIMELAPSE
 
-![Banner Image](/ffmpeg-timelapse.png)
+An attempt to automate the collection and generation of timelape images using python scripts triggered by crontab
 
-Creating a timelapse from a stack of images can be easily done in Adobe Premiere or even the old Windows Movie Maker. However, if you're a sadist or want to be able to script the creation of timelapse videos from a stack of images, you might like to try ffmpeg.
+1. Save the image
+2. Periodically convert the images into a video
+3. Periodically copy all files to a backup server then delete originals (we won't delete them to begin with)
+4. Profit?
 
-## Installation
+## Hardware and Connectivity
 
-### Windows
+- In the first instance, the target devices for this system are Raspberry pi with a webcam or ESP32-CAM modules. 
+- Initial test areas will have wifi coverage or direct network connection
+- raspberry pi should work off mains power or a suitable 5v power supply
+- ESP32 can run off a 5v Supply or suitable supply down to 3.3v
 
-First off, I'd suggest you install chocolaty https://chocolatey.org/install it's basically apt for windows.
+## Scripts
 
-then open an administartor window and
+### save_garden_img.py 
 
-    choco install ffmpeg
-  
-I suggest this, because it adds to the path to the environemt and all that shizzle.
+Script to capture an image from a webcam and save it to a fixed directory
 
-### Ubuntu
+Example cron line
 
-    sudo apt install ffmpeg
-  
-## Configuring things
+    */5 * * * * python3 /home/pi/scripts/save_garden_img.py >/dev/null 2>&1
 
-This is the command i used
+### make_video.py 
+Script to make a video from a folder full of time lapse images
 
-    ffmpeg -framerate 24 -r 24 -start_number 2183 -i IMG_%04d.jpg -s:v 1920x1080 -c:v libx264 -pix_fmt yuv420p -r 24 birthday-garden-24fps.mp4
+    python script.py --input /path/to/images --output /path/to/output.mp4 --fps 30
 
-## References.
+### Next steps
 
-To save you the google-foo and picking through the rather dense documentation, I got a lot of help from:
-
-https://matt.guide/how-to-create-open-source-time-lapse-videos/
+1. Run test with raspberry pi
+2. Set up ESP32 cam and work out how to save the images back to a server
