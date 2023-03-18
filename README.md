@@ -16,13 +16,21 @@ An attempt to automate the collection and generation of timelape images using py
 
 ## Scripts
 
-### save_garden_img.py 
+### save_img.py 
 
-Script to capture an image from a webcam and save it to a fixed directory
+Script to capture an image from a webcam and save it to a directory
+
+Example Usage
+
+    python save_img.py --name deleteme --folder /home/pi/scripts/images --camera 2
+
+- Name (default='newSequence)
+- folder (default='/') 
+- camera (default=0)
 
 Example cron line
 
-    */5 * * * * python3 /home/pi/scripts/save_garden_img.py >/dev/null 2>&1
+    */5 * * * * python3 /home/pi/scripts/save_img.py >/dev/null 2>&1
 
 ### make_video.py 
 Script to make a video from a folder full of time lapse images
@@ -40,6 +48,10 @@ You can read more about it here; https://www.circuitbasics.com/starting-programs
     PS C:\Users\Rob> scp pi@automationserver.local:/home/pi/scripts/video/garden/gardenTest11-15fps.mp4 'D:\dev\timelapse\scp'
     pi@automationserver.local's password:
     gardenTest11-15fps.mp4                                                                100%   90MB  10.7MB/s   00:08
+
+
+windows get files from linux
+scp pi@automationserver.local:/home/pi/scripts/images/garden/*.jpg 'D:\dev\timelapse\gardenImages\'
 
 ## Next steps
 
