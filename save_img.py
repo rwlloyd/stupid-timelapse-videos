@@ -24,7 +24,7 @@ folder_path = args.folder         # Replace "/path/to/folder"
 camera_num = args.camera
 
 # Set up logging to a file
-logging.basicConfig(filename= folder_path + capture_name + 'logfile.log', level=logging.DEBUG)
+logging.basicConfig(filename=capture_name + 'logfile.log', level=logging.DEBUG)
 
 if not os.path.exists(folder_path):     # Check if the folder path exists or not
     os.makedirs(folder_path)            # If the folder path does not exist, create the folder
