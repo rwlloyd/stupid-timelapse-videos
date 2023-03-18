@@ -29,7 +29,19 @@ Script to make a video from a folder full of time lapse images
 
     python script.py --input /path/to/images --output /path/to/output.mp4 --fps 30
 
-### Next steps
+## Using Crontab
+
+Cron is the default task scheduler utility on Linux-based operating systems like the Raspberry Pi OS. It’s the perfect tool for this application as it can start programs and shell scripts on boot or at regular intervals. Cron is widely used in automating recurring tasks such as sending sensor data reports, updating the weather daily, watering the plants, etc. 
+
+You can read more about it here; https://www.circuitbasics.com/starting-programs-automatically-using-cron-on-a-raspberry-pi/
+
+## Using SCP
+
+    PS C:\Users\Rob> scp pi@automationserver.local:/home/pi/scripts/video/garden/gardenTest11-15fps.mp4 'D:\dev\timelapse\scp'
+    pi@automationserver.local's password:
+    gardenTest11-15fps.mp4                                                                100%   90MB  10.7MB/s   00:08
+
+## Next steps
 
 1. Run test with raspberry pi
 2. Set up ESP32 cam and work out how to save the images back to a server
