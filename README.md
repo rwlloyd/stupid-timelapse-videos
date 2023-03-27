@@ -45,13 +45,13 @@ You can read more about it here; https://www.circuitbasics.com/starting-programs
 
 ## Using SCP
 
-    PS C:\Users\Rob> scp pi@automationserver.local:/home/pi/scripts/video/garden/gardenTest11-15fps.mp4 'D:\dev\timelapse\scp'
-    pi@automationserver.local's password:
-    gardenTest11-15fps.mp4                                                                100%   90MB  10.7MB/s   00:08
+windows get single file from linux
 
-
+    scp pi@automationserver.local:/home/pi/scripts/video/garden/gardenTest11-15fps.mp4 'D:\dev\timelapse\scp\gardenTest11-15fps.mp4'
+    
 windows get files from linux
-scp pi@automationserver.local:/home/pi/scripts/images/garden/*.jpg 'D:\dev\timelapse\gardenImages\'
+
+    scp pi@automationserver.local:/home/pi/scripts/images/garden/*.jpg 'D:\dev\timelapse\gardenImages\'
 
 ## Next steps
 
