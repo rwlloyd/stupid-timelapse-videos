@@ -6,6 +6,7 @@ import argparse
 import cv2
 import logging
 import os
+from tqdm import tqdm
 
 # Create an ArgumentParser object to handle command-line arguments
 parser = argparse.ArgumentParser()
@@ -36,7 +37,7 @@ logging.info(f"Input image size: {width}x{height}")
 out = cv2.VideoWriter(out_filename, fourcc, args.fps, (width, height))
 
 # Loop through the image files, read each image and write it to the output video
-for image_file in image_files:
+for image_file in tqdm(image_files, desc="Processing images"):
     img = cv2.imread(image_file)
     if img.shape[0:2] != (height, width):
         print(f"Error: Image {image_file} has a different size than the first image")
