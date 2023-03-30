@@ -30,7 +30,7 @@ if not os.path.exists(folder_path):     # Check if the folder path exists or not
     os.makedirs(folder_path)            # If the folder path does not exist, create the folder
 
 camera = cv2.VideoCapture(camera_num)            # Initialize the camera capture object
-time.sleep(2)                           # Wait for 2 seconds to allow the camera to initialize
+time.sleep(5)                           # Wait for 2 seconds to allow the camera to initialize
 
 try:
     ret, frame = camera.read()              # Read a frame from the camera
